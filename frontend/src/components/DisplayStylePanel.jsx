@@ -1,3 +1,6 @@
+import listIcon from "../assets/listIcon.svg";
+import gridIcon from "../assets/gridIcon.svg";
+
 import {
   useUserPreferences,
   DISPLAY_STYLES,
@@ -11,7 +14,7 @@ export default function DisplayStylePanel() {
   }
 
   return (
-    <div className="w-full h-40">
+    <>
       <h3>Select Display Style</h3>
       <button
         className={
@@ -20,7 +23,7 @@ export default function DisplayStylePanel() {
         }
         onClick={setGrid}
       >
-        {DISPLAY_STYLES.grid}
+        <img className="object-center" src={gridIcon} alt="grid icon " />
       </button>
       <button
         className={
@@ -29,8 +32,8 @@ export default function DisplayStylePanel() {
         }
         onClick={setList}
       >
-        {DISPLAY_STYLES.list}
+        <img src={listIcon} alt="list icon " />
       </button>
-    </div>
+    </>
   );
 }
