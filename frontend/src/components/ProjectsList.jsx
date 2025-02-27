@@ -12,7 +12,14 @@ export default function ProjectsList() {
   return (
     <ul>
       {data.projects.map((project) => {
-        return <li key={project.id}>{project.name}</li>;
+        return (
+          <li
+            className="pb-5 mb-1 hover:bg-gradient-to-l text-9x1 bg-gradient-to-r from-blue-400"
+            key={project.id}
+          >
+            {project.name}
+          </li>
+        );
       })}
     </ul>
   );

@@ -18,16 +18,16 @@ export default function DisplayStylePanel() {
       <h3>Select Display Style</h3>
       <button
         className={
-          "text-lg bg-green-200 m-4 p-5 border-2 border-dotted" +
+          "h-24 w-24 text-lg bg-green-200 m-4 p-1 border-2 border-dotted" +
           activeButton(DISPLAY_STYLES.grid)
         }
         onClick={setGrid}
       >
-        <img className="object-center" src={gridIcon} alt="grid icon " />
+        <img src={gridIcon} alt="grid icon " />
       </button>
       <button
         className={
-          "text-lg bg-blue-200 m-4 p-5 border-2 border-dotted" +
+          "h-24 w-24 text-lg bg-blue-200 m-4 p-1 border-2 border-dotted" +
           activeButton(DISPLAY_STYLES.list)
         }
         onClick={setList}

@@ -13,7 +13,7 @@ function App() {
         <div className="w-1/3">
           <ProjectsList />
         </div>
-        <div className="w-2/3">
+        <div className="pl-5 w-2/3">
           <TasksList projectId={1} displayStyle={"list"} />
         </div>
       </div>
