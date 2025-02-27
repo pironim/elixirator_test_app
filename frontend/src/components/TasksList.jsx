@@ -30,7 +30,7 @@ export default function TasksList({ projectId }) {
   if (error) return <p>Error loading tasks: {error.message}</p>;
 
   return (
-    <div className="w-2/3">
+    <div>
       <h3 className="text-4xl mb-5">All Tasks</h3>
       {displayStyle === DISPLAY_STYLES.list && (
         <ul>
@@ -42,11 +42,11 @@ export default function TasksList({ projectId }) {
         </ul>
       )}
       {displayStyle === DISPLAY_STYLES.grid && (
-        <ul className="flex">
+        <ul className="flex flex-wrap">
           {data.tasks.map((task) => (
-            <li className="grid text-3xl m-4 text-center" key={task.id}>
+            <li className="w-64 text-3xl p-4 text-center overflow-hidden text-clip" key={task.id}>
               <img
-                className="w-64 mb-5"
+                className="mb-5"
                 src={noImagePlaceholderImage}
                 alt="Placeholder for no Logo"
               />

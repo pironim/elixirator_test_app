@@ -29,6 +29,11 @@ query {
 }
 ```
 
+BG Job to insert new tasks
+```
+CreateTasksJob.new.perform
+```
+
 ### Start frontend
 ```sh
 npm install

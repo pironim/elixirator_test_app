@@ -15,11 +15,11 @@ function App() {
       <div className="w-1/3 mb-5">
         <DisplayStylePanel />
       </div>
-      <div className="flex flex-row w-full h-screen border-2 border-y pt-5">
+      <div className="flex flex-row w-full h-screen pt-5">
         <div className="w-1/3">
           <ProjectsList onSelect={selectProject} selectedProjectId={selectedProjectId} />
         </div>
-        <div className="pl-15 w-2/3">
+        <div className="pl-15 w-2/3  border-l-2">
           {!selectedProjectId && <p className="text-4xl">Please Select project!</p>}
           {selectedProjectId && <TasksList projectId={selectedProjectId} />}
         </div>
