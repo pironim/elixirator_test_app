@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import { useQuery, useSubscription, gql } from "@apollo/client";
 import { GET_TASKS } from "../graphql/queries/tasks.js";
-import { DISPLAY_STYLES } from "../contexts/UserPreferencesContext.jsx";
+import { DISPLAY_STYLES, useUserPreferences } from "../contexts/UserPreferencesContext.jsx";
 // import { ON_TASK_CREATED } from '../graphql/subscriptions/tasks.js';
 
-export default function TasksList({ projectId, displayStyle }) {
+import noImagePlaceholderImage from "../assets/noImagePlaceholder.svg";
+
+export default function TasksList({ projectId }) {
   const { loading, error, data, refetch } = useQuery(GET_TASKS, {
     variables: { projectId },
   });
+
+  const { displayStyle } = useUserPreferences();
 
   // const { data: subscriptionData } = useSubscription(TASKS_SUBSCRIPTION, {
   //   variables: { projectId },
@@ -24,7 +28,7 @@ export default function TasksList({ projectId, displayStyle }) {
 
   return (
     <div className="w-2/3">
-      <h3>All Tasks</h3>
+      <h3 className="text-1x9 mb-5">All Tasks</h3>
       {displayStyle === DISPLAY_STYLES.list && (
         <ul className="list">
           {data.tasks.map((task) => (
@@ -36,7 +40,7 @@ export default function TasksList({ projectId, displayStyle }) {
         <ul>
           {data.tasks.map((task) => (
             <li className="grid" key={task.id}>
-              <img src="" alt="Placeholder for no Logo" />
+              <img className="w-32" src={noImagePlaceholderImage} alt="Placeholder for no Logo" />
               {task.name}
             </li>
           ))}
