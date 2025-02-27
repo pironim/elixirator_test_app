@@ -19,7 +19,7 @@ export default function ProjectsList({ onSelect, selectedProjectId }) {
         return (
           <li
             className={
-              "pb-5 mb-1 pl-5 pt-2 hover:bg-gradient-to-l text-9x1 " +
+              "pb-5 mb-1 pl-5 pt-2 hover:bg-gradient-to-l text-3xl " +
               "bg-gradient-to-r from-blue-400 " +
               selectedProjectCssClass(project.id)
             }

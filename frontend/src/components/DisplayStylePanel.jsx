@@ -15,7 +15,7 @@ export default function DisplayStylePanel() {
 
   return (
     <>
-      <h3>Select Display Style</h3>
+      <h3 className="text-4xl">Select Display Style</h3>
       <button
         className={
           "h-24 w-24 text-lg bg-green-200 m-4 p-1 border-2 border-dotted" +

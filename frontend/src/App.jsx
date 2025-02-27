@@ -20,7 +20,7 @@ function App() {
           <ProjectsList onSelect={selectProject} selectedProjectId={selectedProjectId} />
         </div>
         <div className="pl-15 w-2/3">
-          {!selectedProjectId && <p>Please Select project!</p>}
+          {!selectedProjectId && <p className="text-4xl">Please Select project!</p>}
           {selectedProjectId && <TasksList projectId={selectedProjectId} />}
         </div>
       </div>
