@@ -21,18 +21,7 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    field :projects, [Types::ProjectType], null: true, description: "Fetches all the projects"
-
-    def projects
-      Project.all
-    end
-
-    field :tasks, [Types::TaskType], null: true, description: "Fetches all the tasks" do
-      argument :project_id, ID, required: true
-    end
-
-    def tasks(project_id:)
-      Task.where(project_id: project_id)
-    end
+    field :projects, resolver: Queries::GetProjects
+    field :tasks, resolver: Queries::GetTasks
   end
 end
