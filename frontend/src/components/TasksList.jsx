@@ -44,9 +44,9 @@ export default function TasksList({ projectId }) {
       {displayStyle === DISPLAY_STYLES.grid && (
         <ul className="flex flex-wrap">
           {data.tasks.map((task) => (
-            <li className="w-64 text-3xl p-4 text-center overflow-hidden text-clip" key={task.id}>
+            <li className="block w-64 text-1xl text-center overflow-hidden text-elipsis" key={task.id}>
               <img
-                className="mb-5"
+                className="m-auto w-32 mb-5 align-center"
                 src={noImagePlaceholderImage}
                 alt="Placeholder for no Logo"
               />
