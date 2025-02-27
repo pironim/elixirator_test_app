@@ -22,20 +22,17 @@ module Types
     # They will be entry points for queries on your schema.
 
     field :projects, [Types::ProjectType], null: true, description: "Fetches all the projects"
+
     def projects
       Project.all
     end
 
-    field :tasks, [Types::TaskType], null: true, description: "Fetches all the tasks"
-    def tasks
-      Task.all
+    field :tasks, [Types::TaskType], null: true, description: "Fetches all the tasks" do
+      argument :project_id, ID, required: true
     end
 
-    field :project_tasks, [Types::TaskType], null: false, description: "Fetch project related tasks" do
-      argument :id, ID, required: true
-    end
-    def project_tasks(id:)
-      Task.where(project_id: id)
+    def tasks(project_id:)
+      Task.where(project_id: project_id)
     end
   end
 end
