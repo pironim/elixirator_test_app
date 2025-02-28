@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useQuery, useSubscription, gql } from "@apollo/client";
+import { useQuery, useSubscription } from "@apollo/client";
 import {
   DISPLAY_STYLES,
   useUserPreferences,

@@ -3,10 +3,11 @@
       # Store all GraphQL subscriptions the consumer is listening for on this channel
       @subscription_ids = []
       Rails.logger.info("Subscribed to GraphqlChannel with params: #{params}")
-      stream_from "graphql:#{params[:channelId]}"
+      # stream_from "graphql:#{params[:channelId]}"
     end
 
     def execute(data)
+      # looks like apollo client packing query into another query
       query = data["query"]
       variables = ensure_hash(data["variables"])
       operation_name = data["operationName"]
@@ -16,12 +17,12 @@
         # current_application_context: connection.current_application_context
       }
 
-      result = BackendSchema.execute({
+      result = BackendSchema.execute(
         query: query,
         context: context,
         variables: variables,
         operation_name: operation_name,
-      })
+      )
 
       payload = {
         result: result.to_h,

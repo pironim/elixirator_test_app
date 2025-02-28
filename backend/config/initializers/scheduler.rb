@@ -2,6 +2,6 @@ require 'rufus-scheduler'
 
 scheduler = Rufus::Scheduler.new
 
-scheduler.every '2m' do
+scheduler.every '1m' do
   CreateTasksJob.perform_later
 end
