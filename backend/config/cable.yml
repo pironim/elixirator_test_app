@@ -1,6 +1,5 @@
 development:
   adapter: async
-  channel_prefix: test_app_development
 
 test:
   adapter: test
