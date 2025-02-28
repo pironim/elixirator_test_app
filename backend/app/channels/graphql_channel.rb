@@ -25,7 +25,7 @@
       )
 
       payload = {
-        result: result.to_h,
+        result: result['data'].present? ? result.to_h : { data: nil },
         more: result.subscription?,
       }
 
