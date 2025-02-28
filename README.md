@@ -53,3 +53,11 @@ npm run dev
 4. Generate new rails app - rails 8.0.1 and test db connection
 5. generate react app with vite  npm create vite@latest . -- --template react
 6. add graphql to rails application
+7. Wire react app to use one grapql query
+8. Add second query
+9. Improve css and some primitive layout
+10. make project selectable and remove hardcoded project id from props
+11. add localstorage to user preferences
+12. add job to create new tasks
+13. add rufus scheduler to run job every 2 minutes
+14. adding subscription + action cable to backend
