@@ -1,5 +1,7 @@
 # Test application
 
+STILL NOT READY FOR PROD NEED AT LEAST ENV vars added to both front and back
+
 ### Start Backend
 ```sh
 bundle
