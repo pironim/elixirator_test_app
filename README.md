@@ -1,6 +1,7 @@
 # Test application
 
-STILL NOT READY FOR PROD NEED AT LEAST ENV vars added to both front and back
+need 
+ruby 3.3, Mysql, Redis, NodeJs installed
 
 ### Start Backend
 ```sh
@@ -17,16 +18,17 @@ npm run dev
 
 # Implementation process
 
-1. To make things easier - use one mono repo backend, frontend folders with docker compose for local development
+1. To make things easier - use one mono repo backend, frontend
 
 2. try to build docker compose for local development but reject this idea due to tight deadline. going with all apps on local machine
 
-3. Rethinking requirements and figure out that redis can help with two things
+3. Rethinking requirements and figure out that redis/sidekiq can help with two things
     - can be leveraged to generate new tasks in background every 2 minutes
     - required to send websockets notifications for live updates on client side
 
-4. Generate new rails app - rails 8.0.1 and test db connection
-5. generate react app with vite  npm create vite@latest . -- --template react
+4. Generate new rails app - rails 8.0.1 and test db connection with new mysql installation
+
+5. generate react app with vite
 6. add graphql to rails application
 7. Wire react app to use one grapql query
 8. Add second query
@@ -39,3 +41,6 @@ npm run dev
 15. adding frontent code
 16. debugging subscription issues.
 17. polish results
+18. adjust readme
+
+STILL NOT READY FOR REAL PROD NEED AT LEAST ENV vars added to both front and back, TESTS, LINER .
