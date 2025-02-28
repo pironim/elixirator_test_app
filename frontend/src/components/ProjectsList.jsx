@@ -5,13 +5,11 @@ export default function ProjectsList({ onSelect, selectedProjectId }) {
   const { loading, error, data, refetch } = useQuery(GET_PROJECTS);
 
   function selectedProjectCssClass(projectId) {
-    return projectId === selectedProjectId ? " font-bold bg-indigo-700 " : ""
+    return projectId === selectedProjectId ? " font-bold bg-indigo-700 " : "";
   }
 
   if (loading) return <p>Loading projects...</p>;
   if (error) return <p>Error loading projects: {error.message}</p>;
-
-  console.log(data.projects);
 
   return (
     <ul>
