@@ -1,10 +1,10 @@
 module Subscriptions
   class TaskCreated < BaseSubscription
-    field :task_created, Types::TaskType, null: false
+    field :task, Types::TaskType
+    argument :project_id, ID, required: true
 
-    def task_created
+    def task
       object
     end
   end
 end
-
