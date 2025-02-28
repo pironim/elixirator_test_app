@@ -1,7 +1,7 @@
 import { useQuery, useSubscription, gql } from "@apollo/client";
 import { GET_PROJECTS } from "../graphql/queries/projects.js";
 
-export default function ProjectsList({ onSelect, selectedProjectId }) {
+export default function Projects({ onSelect, selectedProjectId }) {
   const { loading, error, data, refetch } = useQuery(GET_PROJECTS);
 
   function selectedProjectCssClass(projectId) {

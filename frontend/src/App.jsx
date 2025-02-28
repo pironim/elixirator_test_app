@@ -1,7 +1,7 @@
 import { useState } from "react";
-import DisplayStylePanel from "./components/DisplayStylePanel";
-import TasksList from "./components/TasksList";
-import ProjectsList from "./components/ProjectsList";
+import DisplayStylePanel from "./components/DisplayStylePanel.jsx";
+import Tasks from "./components/Tasks.jsx";
+import Projects from "./components/Projects.jsx";
 
 function App() {
   const [selectedProjectId, setSelectedProjectId] = useState(null);
@@ -17,11 +17,11 @@ function App() {
       </div>
       <div className="flex flex-row w-full h-screen pt-5">
         <div className="w-1/3">
-          <ProjectsList onSelect={selectProject} selectedProjectId={selectedProjectId} />
+          <Projects onSelect={selectProject} selectedProjectId={selectedProjectId} />
         </div>
         <div className="pl-15 w-2/3  border-l-2">
           {!selectedProjectId && <p className="text-4xl">Please Select project!</p>}
-          {selectedProjectId && <TasksList projectId={selectedProjectId} />}
+          {selectedProjectId && <Tasks projectId={selectedProjectId} />}
         </div>
       </div>
     </div>

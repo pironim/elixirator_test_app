@@ -10,7 +10,7 @@ import List from "./List.jsx";
 import { GET_TASKS } from "../graphql/queries/tasks.js";
 import { TASK_CREATED } from "../graphql/subscriptions/tasks.js";
 
-export default function TasksList({ projectId }) {
+export default function Tasks({ projectId }) {
   const { displayStyle } = useUserPreferences();
 
   const { loading, error, data, refetch } = useQuery(GET_TASKS, {

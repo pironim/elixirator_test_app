@@ -1,37 +1,10 @@
 # Test application
 
-## Local development
-
 ### Start Backend
 ```sh
+bundle
 bundle exec rails db:create db:migrate db:seed
 bundle exec rails s
-```
-
-### Testing graphql queries without frontend
-
-http://localhost:3000/graphiql
-
-graphql example query
-```
-{
-  tasks {
-    id
-    name
-  }
-}
-
-query {
-  projectTasks(id: 1){
-    id
-    name
-  }
-}
-```
-
-BG Job to insert new tasks
-```
-CreateTasksJob.new.perform
 ```
 
 ### Start frontend
@@ -61,3 +34,6 @@ npm run dev
 12. add job to create new tasks
 13. add rufus scheduler to run job every 2 minutes
 14. adding subscription + action cable to backend
+15. adding frontent code
+16. debugging subscription issues.
+17. polish results
