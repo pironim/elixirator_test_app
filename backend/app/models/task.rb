@@ -9,6 +9,7 @@ class Task < ApplicationRecord
   private
 
   def trigger_task_created_event
-    Subscriptions::ApplicationSubscription.trigger("onTaskCreated", {}, { task: self })
+    # Subscriptions::ApplicationSubscription.trigger("onTaskCreated", {}, { task: self })
+    BackendSchema.subscriptions.trigger("task_created", {}, { task: self })
   end
 end

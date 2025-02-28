@@ -6,7 +6,7 @@ import {
 } from "../contexts/UserPreferencesContext.jsx";
 
 import { GET_TASKS } from "../graphql/queries/tasks.js";
-import { ON_TASK_CREATED } from "../graphql/subscriptions/tasks.js";
+import { TASK_CREATED } from "../graphql/subscriptions/tasks.js";
 
 import noImagePlaceholderImage from "../assets/noImagePlaceholder.svg";
 
@@ -17,7 +17,7 @@ export default function TasksList({ projectId }) {
     variables: { projectId },
   });
 
-  const { data: subscriptionData } = useSubscription(ON_TASK_CREATED, {
+  const { data: subscriptionData } = useSubscription(TASK_CREATED, {
     variables: { projectId },
   });
 

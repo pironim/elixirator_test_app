@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-export const ON_TASK_CREATED = gql`
-  subscription OnTaskCreated($projectId: ID!) {
+export const TASK_CREATED = gql`
+  subscription TaskCreated($projectId: ID!) {
     task {
       id
       name
