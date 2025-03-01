@@ -24,6 +24,8 @@ export default function Tasks({ projectId }) {
   useEffect(() => {
     if (subscriptionData) {
       console.log("SubscriptionData", subscriptionData);
+      // Data can be merged from subscription payload
+      // but we also can refetch original query
       refetch();
     }
   }, [subscriptionData, refetch]);
